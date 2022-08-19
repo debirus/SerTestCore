@@ -11,6 +11,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+//Aggiunta connessione a mysql di tipo transient
 builder.Services.AddTransient<AppDb>(_ => new AppDb(configuration["ConnectionStrings:Default"]));
 
 var app = builder.Build();
